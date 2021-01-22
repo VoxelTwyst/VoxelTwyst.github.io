@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+@-webkit-keyframes scroll-topbar {
+  to {
+    top: 0;
+    left: 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 0;
+  }
+}
+@keyframes scroll-topbar {
+  to {
+    top: 0;
+    left: 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin: 0;
+  }
+}
+
+@-webkit-keyframes scroll-logo {
+  80%, 100% {
+    -webkit-mask-size: var(--small-size);
+            mask-size: var(--small-size);
+    width: var(--small-size);
+    height: var(--small-size);
+  }
+}
+
+@keyframes scroll-logo {
+  80%, 100% {
+    -webkit-mask-size: var(--small-size);
+            mask-size: var(--small-size);
+    width: var(--small-size);
+    height: var(--small-size);
+  }
+}
+
+@-webkit-keyframes scroll-name {
+  to {
+    top: 20px;
+    left: 80px;
+    opacity: 60%;
+  }
+}
+
+@keyframes scroll-name {
+  to {
+    top: 20px;
+    left: 80px;
+    opacity: 60%;
+  }
+}
+
+body {
+  min-height: 500vh;
+}
+
+#topbar {
+  --size: 200px;
+  --small-size: 60px;
+  position: fixed;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 50%;
+  margin-left: calc(var(--size) / -2);
+  top: 50%;
+  margin-top: -129px;
+  -webkit-animation: scroll-topbar 1s linear infinite;
+          animation: scroll-topbar 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+#topbar > #logo {
+  -webkit-mask-image: url(logo.svg);
+          mask-image: url(logo.svg);
+  -webkit-mask-size: var(--size);
+          mask-size: var(--size);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  -webkit-animation: scroll-logo 1s linear infinite;
+          animation: scroll-logo 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+#topbar > #logo > #logo-bg1 {
+  background-image: url(background/cats.png);
+  background-size: 360px;
+  height: var(--size);
+}
+
+#topbar > #name {
+  text-align: center;
+  top: calc(50% + 100px);
+  left: calc(50% - calc(var(--size) / 2));
+  position: fixed;
+  width: var(--size);
+  font: 400 31px 'Montserrat', sans-serif;
+  -webkit-animation: scroll-name 1s linear infinite;
+          animation: scroll-name 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+@mixin scroll-animation($animation)
+    animation: $animation 1s linear infinite
+    animation-play-state: paused
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+@keyframes scroll-topbar
+    to
+        top: 0
+        left: 0
+        padding-left: 10px
+        padding-top: 10px
+        margin: 0
+
+@keyframes scroll-logo
+    80%, 100%
+        mask-size: var(--small-size)
+
+        width: var(--small-size)
+        height: var(--small-size)
+
+@keyframes scroll-name
+    to
+        top: 20px
+        left: 80px
+        opacity: 60%
+
+
+
+body
+    min-height: 500vh
+
+#topbar
+    --size: 200px
+    --small-size: 60px
+
+    position: fixed
+    width: fit-content
+    height: fit-content
+
+    left: 50%
+    margin-left: calc(var(--size) / -2)
+    top: 50%
+    margin-top: -129px
+
+    @include scroll-animation(scroll-topbar)
+
+    > #logo
+        mask-image: url(logo.svg)
+        mask-size: var(--size)
+        mask-repeat: no-repeat
+
+        width: var(--size)
+        height: var(--size)
+
+        position: relative
+
+        @include scroll-animation(scroll-logo)
+
+        > #logo-bg1
+            background-image: url(background/cats.png)
+            background-size: 360px
+            
+            height: var(--size)
+
+    > #name
+        text-align: center
+        top: calc(50% + 100px)
+        left: calc(50% - calc(var(--size) / 2))
+
+        position: fixed
+        width: var(--size)
+
+        font: 400 31px 'Montserrat', sans-serif
+
+        @include scroll-animation(scroll-name)
