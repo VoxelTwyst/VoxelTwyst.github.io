@@ -29,6 +29,27 @@
         opacity: 60%
 
 
+@keyframes scroll-bg1
+    0%, 2%, 85%, 100%
+        opacity: 100%
+    
+    10%, 77%
+        opacity: 0
+
+@keyframes scroll-bg2
+    0%, 27%
+        opacity: 100%
+    
+    35%, 100%
+        opacity: 0
+        
+@keyframes scroll-bg3
+    0%, 52%
+        opacity: 100%
+    
+    61%, 100%
+        opacity: 0
+
 
 body
     min-height: 500vh
@@ -60,11 +81,20 @@ body
 
         @include scroll-animation(scroll-logo)
 
-        > #logo-bg1
-            background-image: url(background/cats.png)
-            background-size: 360px
+        > div
+            position: absolute
+            width: inherit
+            height: inherit
+
+        > .wrapper1
+            @include scroll-animation(scroll-bg1)
+
+        > .wrapper2
+            @include scroll-animation(scroll-bg2)
+
+        > .wrapper3
+            @include scroll-animation(scroll-bg3)
             
-            height: var(--size)
 
     > #name
         text-align: center
@@ -77,3 +107,11 @@ body
         font: 400 31px 'Montserrat', sans-serif
 
         @include scroll-animation(scroll-name)
+
+
+.logo-bg
+    background-size: 360px
+
+    height: var(--size)
+
+    position: relative

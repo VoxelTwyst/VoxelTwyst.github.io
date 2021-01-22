@@ -52,6 +52,60 @@
   }
 }
 
+@-webkit-keyframes scroll-bg1 {
+  0%, 2%, 85%, 100% {
+    opacity: 100%;
+  }
+  10%, 77% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-bg1 {
+  0%, 2%, 85%, 100% {
+    opacity: 100%;
+  }
+  10%, 77% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scroll-bg2 {
+  0%, 27% {
+    opacity: 100%;
+  }
+  35%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-bg2 {
+  0%, 27% {
+    opacity: 100%;
+  }
+  35%, 100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scroll-bg3 {
+  0%, 52% {
+    opacity: 100%;
+  }
+  61%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-bg3 {
+  0%, 52% {
+    opacity: 100%;
+  }
+  61%, 100% {
+    opacity: 0;
+  }
+}
+
 body {
   min-height: 500vh;
 }
@@ -104,10 +158,49 @@ body {
           animation-fill-mode: both;
 }
 
-#topbar > #logo > #logo-bg1 {
-  background-image: url(background/cats.png);
-  background-size: 360px;
-  height: var(--size);
+#topbar > #logo > div {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+#topbar > #logo > .wrapper1 {
+  -webkit-animation: scroll-bg1 1s linear infinite;
+          animation: scroll-bg1 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+#topbar > #logo > .wrapper2 {
+  -webkit-animation: scroll-bg2 1s linear infinite;
+          animation: scroll-bg2 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+#topbar > #logo > .wrapper3 {
+  -webkit-animation: scroll-bg3 1s linear infinite;
+          animation: scroll-bg3 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 #topbar > #name {
@@ -127,5 +220,11 @@ body {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+}
+
+.logo-bg {
+  background-size: 360px;
+  height: var(--size);
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */
