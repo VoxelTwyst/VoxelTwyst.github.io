@@ -65,6 +65,7 @@
 
 body
     min-height: 500vh
+    margin: 0
 
 #whitebar
     position: fixed
@@ -156,3 +157,41 @@ body
     font: 400 27px 'Lato', sans-serif
     opacity: 60%
     margin: 0 100px 0 50px
+
+.gradient
+    width: 100%
+    height: 10em
+    padding: 0
+
+    font: 400 27px 'Lato', sans-serif
+
+    &.transparent-black
+        background-image: linear-gradient(#ffffff00, #000000)
+
+    &.orange-transparent
+        background-image: linear-gradient(#F8C56C, #ffffff00)
+
+.desert-dig-background
+    background: 
+        image: url(background/dig.png)
+        size: 100%
+
+    image-rendering: pixelated
+    
+    margin: 0
+
+    width: 100%
+    padding-top: 56.25%
+
+.desert-dig-description
+    background-color: #F8C56C
+
+    padding: 100px
+    
+    font: 400 20px 'Lato', sans-serif
+
+    > p > a, > p > a:visited
+        color: #E07D5E
+
+.round
+    border-radius: 20px

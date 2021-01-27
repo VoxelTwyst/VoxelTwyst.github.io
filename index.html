@@ -8,12 +8,69 @@
     </head>
 
     <body>
-        <div style="width: 100%; height: 60em;"></div>
+        <div style="width: 100%; height: 68em;"></div>
         <p class="writing">
             Welcome to my portfolio.<br><br>
             I would like to prove to you my fascination with games and everything that surrounds them:
-            their history and its consequences; their visual designs, their gameplay, and the technical elements that underpin everything.
+            their history and its consequences; their visual designs, their gameplay, and the technical elements that underpin everything.<br><br><br><br>
         </p>
+        <div class="gradient transparent-black"></div>
+        <div class="desert-dig-background">
+        </div>
+        <div class="desert-dig-description">
+            <p>
+                Desert Dig is a short, tile-based puzzle game that I made in a week for a game jam. It placed #16 in the Game Design category out of over 700 entries
+                from around the world. You play as my attempt at drawing a meerkat in 8x8 pixels (harder than I expected),
+                and your aim is to reach the flag in each of the twelve levels without being spotted by an enemy.
+            </p>
+            <p>
+                You can try it out <a href="/desert-dig" target="_blank">here</a>.
+            </p>
+            <p>
+                The theme of the jam was "holes". As that was revealed, I started brainstorming ideas.
+                My first thought was "rabbit hole". I also considered golf - I thought that some kind of reverse golf might be interesting.
+                In the end, I correctly guessed that golf would be quite a popular theme, and stuck with the "rabbit holes" idea, changing the rabbit
+                to a meerkat since it's a less obvious choice for a burrowing animal.
+            </p>
+            <p>
+                Another idea stuck out to me: that of "digging yourself into a hole". This made me think of puzzle games, and a puzzle game seemed feasible.
+                Eventually, I arrived at the final concept: a stealth puzzle with both overground and underground movement, where you can block your path
+                by digging holes.
+            </p>
+            <p>
+                Here is the concept for one of my favourite levels.
+            </p>
+            <img class="round" src="img/level-example.png">
+            <p>
+                I planned each one out in a similar fashion, with arrows showing the correct path through the level:
+                red represents underground movement, while green represents overground. P is the player's starting position, F is the flag, E are enemies; B and D
+                are a button and a door. I tried to embody the idea of tricking the player into thinking the solution was obvious,
+                while it was really something more complex, to create the feeling of satisfaction that is a big part of the genre's appeal.
+            </p>
+            <p>
+                The version you see is not exactly the same as the one I submitted. To prepare it for my portfolio, I responded to some of the feedback that
+                I recieved during the jam:
+            </p>
+            <ul>
+                <li>I gave the rotating enemies red indicator arrows showing where they would turn next, to allow the player to better plan their next move.</li>
+                <li>I made the patrolling enemies leave behind some dust when they fall down holes to make it more obvious what happened to them.</li>
+            </ul>
+            <p>
+                I also decided to export the project to HTML5 rather than to a native executable so that you could play it more easily. However, this caused a
+                problem: a bug in Game Maker Studio's HTML5 compiler caused flags to check for the player before enemies could, allowing the player to beat level 9
+                far more easily than intended by going straight to the flag.
+            </p>
+            <p>
+                To account for this, I made a special flag object that makes sure to prompt all enemies to scan for the player before it lets them win.
+            </p>
+            <p>
+                Overall, I am satisfied with this project, but if I had more time, I would like to make more levels. The patrolling enemies have potential to be used
+                in many more interesting ways, and I would like to fully explore them. Had I had my time again, I would definitely have been less restrictive on myself
+                with the graphics: I wanted to make each sprite 8x8 and use only four colours, but that way I struggled to make some objects legible. I have particularly
+                recieved comments that the flag is hard to see.
+            </p>
+        </div>
+        <div class="gradient orange-transparent"></div>
 
         <div id="whitebar">
             <div id="topbar">
