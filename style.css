@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @-webkit-keyframes scroll-topbar {
   to {
     top: 0;
     left: 0;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
     margin: 0;
   }
 }
@@ -12,8 +13,8 @@
   to {
     top: 0;
     left: 0;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
     margin: 0;
   }
 }
@@ -38,17 +39,15 @@
 
 @-webkit-keyframes scroll-name {
   to {
-    top: 20px;
-    left: 80px;
-    opacity: 60%;
+    top: 15px;
+    left: 60px;
   }
 }
 
 @keyframes scroll-name {
   to {
-    top: 20px;
-    left: 80px;
-    opacity: 60%;
+    top: 15px;
+    left: 60px;
   }
 }
 
@@ -106,13 +105,66 @@
   }
 }
 
+@-webkit-keyframes scroll-whitebar {
+  to {
+    left: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+    height: 50px;
+    border-radius: 25px;
+  }
+}
+
+@keyframes scroll-whitebar {
+  to {
+    left: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+    height: 50px;
+    border-radius: 25px;
+  }
+}
+
+@-webkit-keyframes scroll-scrolldown {
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-scrolldown {
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
 body {
   min-height: 500vh;
 }
 
+#whitebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-animation: scroll-whitebar 1s linear infinite;
+          animation: scroll-whitebar 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
 #topbar {
   --size: 200px;
-  --small-size: 60px;
+  --small-size: 40px;
   position: fixed;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -222,9 +274,33 @@ body {
           animation-fill-mode: both;
 }
 
+#topbar > #scrolldown {
+  text-align: center;
+  position: relative;
+  top: 70px;
+  font: 500 16px 'Montserrat', sans-serif;
+  opacity: 60%;
+  -webkit-animation: scroll-scrolldown 1s linear infinite;
+          animation: scroll-scrolldown 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
 .logo-bg {
   background-size: 360px;
   height: var(--size);
   position: relative;
+}
+
+.writing {
+  font: 400 27px 'Lato', sans-serif;
+  opacity: 60%;
+  margin: 0 100px 0 50px;
 }
 /*# sourceMappingURL=style.css.map */
