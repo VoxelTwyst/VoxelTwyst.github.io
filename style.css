@@ -361,6 +361,10 @@ body {
   margin-bottom: 20px;
 }
 
+.depthmapping > p > a, .depthmapping > p > a:visited {
+  color: #91f2ff;
+}
+
 .depthmapping > h1 {
   font-weight: 200;
 }

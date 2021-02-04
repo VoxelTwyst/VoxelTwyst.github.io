@@ -56,11 +56,6 @@ class HSVImageData:  # Class for storing an image in HSV format
         return str(self.data)
 
 
-class DimensionError(Exception):  # Special class for the error that gets thrown when the two images are different sizes.
-                                  # I should have used assert for this but oh well
-    pass
-
-
 def rotate(data):  # This just makes it easier to iterate through the similarity maps when I'm finding the depth map
     """
     Goes from
@@ -79,7 +74,7 @@ def rotate(data):  # This just makes it easier to iterate through the similarity
     return r
 
 
-def median(arr):  # Finds the median of arr. This is a really slow way of doing it on purpose so I can "iterate" on it.
+def median(arr):  # Finds the median of arr. This is a really slow way of doing it
     arr = sorted(arr)
     if len(arr) % 2 == 1:
         return arr[len(arr) // 2]

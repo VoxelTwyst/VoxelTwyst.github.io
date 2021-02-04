@@ -4,14 +4,12 @@ import PIL as il
 from util import HSVImageData, rotate
 
 
-def similarity(a, b):  # Takes two colours and tells you how similar the colours are. This isn't a very good way of doing that but I can write 
-                       # about that in the writeup.
+def similarity(a, b):  # Takes two colours and tells you how similar the colours are.
     sim_h = 1 - abs(a[0] - b[0])  # Take the absolute difference of the colour values, but then invert them because we want the similarity, not the difference.
     sim_s = 1 - abs(a[1] - b[1])
     sim_v = 1 - abs(a[2] - b[2])
 
-    return sim_h * sim_h * sim_s * sim_v  # Just multiply them together. I do this rather than finding the average because they will basically do the same thing, since all
-                                          # we're doing is comparing this return value to other ones, and this is faster.
+    return (sim_h + sim_h + sim_s + sim_v)  # Return the average of the colour values.
 
 
 def run(left:HSVImageData, right:HSVImageData):  # The actual thing
