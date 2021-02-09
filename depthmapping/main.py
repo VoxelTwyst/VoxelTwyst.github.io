@@ -2,7 +2,7 @@ from sys import argv
 from PIL import Image
 from numpy import asarray
 
-from util import HSVImageData, DimensionError
+from util import HSVImageData
 import pixim
 
 
