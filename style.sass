@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400&display=swap');
 
 @mixin scroll-animation($animation)
     animation: $animation 1s linear infinite
@@ -168,8 +169,11 @@ body
     &.transparent-black
         background-image: linear-gradient(#ffffff00, #000000)
 
-    &.orange-transparent
-        background-image: linear-gradient(#F8C56C, #ffffff00)
+    &.orange-black
+        background-image: linear-gradient(#F8C56C, #000000)
+
+    &.black-green
+        background-image: linear-gradient(#000000, #74b482)
 
 .desert-dig-background
     background: 
@@ -195,3 +199,45 @@ body
 
 .round
     border-radius: 20px
+
+.depthmapping
+    background-color: #000000
+
+    padding: 100px
+
+    font: 400 16px 'Jetbrains Mono', monospace
+    color: #00ff00
+
+    > p
+        margin-bottom: 20px
+
+        > a, > a:visited
+            color: #91f2ff
+
+    > h1
+        font-weight: 200
+
+    > .images
+        margin:
+            left: auto
+            right: auto
+
+        width: fit-content
+        
+        border: 5px solid
+
+        image-rendering: pixelated
+
+.wide
+    width: 500px
+
+.rts
+    background-color: #74b482
+
+    padding: 100px
+
+    font: 400 20px 'Lato', sans-serif
+    color: #000000
+
+    > h1
+        font-family: 'Montserrat', sans-serif

@@ -34,7 +34,7 @@
             </p>
             <p>
                 Another idea stuck out to me: that of "digging yourself into a hole". This made me think of puzzle games, and a puzzle game seemed feasible.
-                Eventually, I arrived at the final concept: a stealth puzzle with both overground and underground movement, where you can block your path
+                Eventually, I arrived at the final concept: a stealth puzzle with both overground and underground movement, where you can block your own path
                 by digging holes.
             </p>
             <p>
@@ -66,16 +66,112 @@
             <p>
                 Overall, I am satisfied with this project, but if I had more time, I would like to make more levels. The patrolling enemies have potential to be used
                 in many more interesting ways, and I would like to fully explore them. Had I had my time again, I would definitely have been less restrictive on myself
-                with the graphics: I wanted to make each sprite 8x8 and use only four colours, but that way I struggled to make some objects legible. I have particularly
+                with the graphics: I wanted to make each sprite 8x8 and use only four colours, but that way I struggled to make some objects legible. I particularly
                 recieved comments that the flag is hard to see.
             </p>
         </div>
-        <div class="gradient orange-transparent"></div>
+        <div class="gradient orange-black"></div>
+        <div class="depthmapping">
+            <h1>Depthmap Generation: a programming project</h1>
+            <p>
+                To test my programming ability, I decided to try and create a depthmap generation program without using machine learning. I thought it would
+                be an interesting challenge. In short, the program simulates binocular vision, generating estimated depth values for each pixel in a pair of images.
+            </p>
+            <p>
+                I wrote my code in Python, which turned out to be something of a mistake, since Python is quite slow, and my algorithm has a time complexity
+                of O(w&sup2;h), where w is the image's width and h is its height.
+                I tried to rewrite it using the CUDA GPU programming framework, which would have made things considerably faster using the graphics card's
+                concurrent processing, but my GPU was too old to run it.
+            </p>
+            <p>
+                You can click <a href="https://github.com/VoxelTwyst/VoxelTwyst.github.io/tree/master/depthmapping">here</a> to see my source code.
+            </p>
+            <p>
+                It could definitely do with some work, but I like the concept. Here is an example result, which may not be the best depthmap in the world,
+                but it is certainly interesting.
+            </p>
+            <div class="images">
+                <img src="img/office.png" class="wide"><br>
+                <img src="depthmapping/out/office_pixim.png" class="wide">
+            </div>
+            <p>
+                Here's the output with the levels adjusted:
+            </p>
+            <div class="images">
+                <img src="img/office_contrast.png" class="wide">
+            </div>
+            <p>
+                As you can see, in this simple virtual scene (which I found for free on the unity asset store), the algorithm demonstrates a respectable
+                understanding of near and distant objects, singling out the central pillar and the pillar on one side of the door. This example may not be
+                the best representation of the real world, as it has many similar colours which could have caused confusion, but it definitely shows promise.
+            </p>
+        </div>
+        <div class="gradient black-green"></div>
+        <div class="rts">
+            <h1>What I'm working on now</h1>
+            <p>
+                Recently, I've been working on a game that's way outside my comfort zone. It's a 3D mobile game: I am far more comfortable working in 2D,
+                both graphicaly and technically, and I have never worked with touch input before. In fact, while I am familiar with the basic operation of
+                Unity, which I chose for this project for its useful features and its quick and easy mobile testing, I normally prefer its
+                alternatives for their ease of use. It is certainly challenging to learn all these things at once.
+            </p>
+            <p>
+                My inspiration for this game was a misleading mobile game ad. While the game it represented was a generic city builder, the ad presented
+                a unique real-time strategy game. Surprisingly, it seemed to have some great ideas about how to find a balance between the simplicity of
+                mobile RTS games (such as Clash of Clans's system for attacking other players' villages), and the strategic depth of PC RTSs (Supreme Commander,
+                Starcraft, etc.).
+            </p>
+            <p>
+                The nonexistent game seemed to allow the player individual control of each unit, but did not overcomplicate things this way: each unit could
+                only attack, and had no special abilities. I was intrigued by the concept of upgrading units by merging them: a common mobile mechanic that
+                could replace the upgrade system present in some traditional RTSs.
+            </p>
+            <p>
+                So far, I have managed to prototype the basic controls. I was insipred by the <i>Pikmin</i> series, particularly <i>Pikmin 3</i>'s touchscreen
+                controls. They work as follows:
+            </p>
+            <ul>
+                <li>The player can pan and zoom with two fingers, within certain limits.</li>
+                <li>
+                    If they touch a unit with one finger, then move their finger elsewhere and lift it, that unit will move to the location where the touch
+                    ended.
+                </li>
+                <li>
+                    If their finger passes over other units before they release it, they, too, will move to the target location, standing nicely spaced out in a grid
+                    formation.
+                </li>
+                <li>Eventually, there will be an area in one corner of the screen such that, if the player lifts their finger there, the move order will be cancelled.</li>
+                <li>Once enemy units are added, if the player releases their finger over an enemy, an attack order will be issued instead.</li>
+            </ul>
+            <p>
+                Here is a short demo of the controls so far:
+            </p>
+            <video width="960" height="443" controls>
+                <source src="img/rts.mp4" type="video/mp4">
+            
+                <i>It seems that you are using an old browser that doesn't support video tags. Please click <a href="img/rts.mp4">here</a> to view or download the video.</i>
+            </video>
+            <p>
+                You may notice that towards the end of the video, the units do not take the perfect path, instead opting to move past each other. I have tried to fix
+                a few of these situations by generating the grid of positions, and then having each unit move to the nearest available position to them, but this was not
+                very effective. I will search for a solution to this issue.
+            </p>
+            <p>
+                To accomodate simple controls and gameplay, in line with the typical "pick up and play" format of mobile games, the tactics will be highly focused on
+                macro control (ordering units in big groups, rather than individually; units will not have many activated abilities), and choice of units. I would
+                like to use the system of collecting resources to produce units at a certain building that is common in PC RTS games. I will have to do some extensive
+                design work to create a game that aligns with my vision.
+            </p>
+            <p>
+                My Unity source code, and an APK for the demo in case you have an Android phone to hand and really enjoy moving cylinders around, are available
+                <a href="/">here</a>.
+            </p>
+        </div>
 
         <div id="whitebar">
             <div id="topbar">
                 <div id="logo">
-                    <div class="wrapper4"><div class="logo-bg" style="background-color: blue;"></div></div>
+                    <div class="wrapper4"><div class="logo-bg" style="background-image: url(background/dig.png); background-position: 80%;"></div></div>
                     <div class="wrapper3"><div class="logo-bg" style="background-color: red;"></div></div>
                     <div class="wrapper2"><div class="logo-bg" style="background-image: url(background/cats.png);"></div></div>
                     <div class="wrapper1"><div class="logo-bg" style="background-color: black;"></div></div>

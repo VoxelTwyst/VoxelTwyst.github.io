@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400&display=swap");
 @-webkit-keyframes scroll-topbar {
   to {
     top: 0;
@@ -317,9 +318,14 @@ body {
   background-image: linear-gradient(#ffffff00, #000000);
 }
 
-.gradient.orange-transparent {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#F8C56C), to(#ffffff00));
-  background-image: linear-gradient(#F8C56C, #ffffff00);
+.gradient.orange-black {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F8C56C), to(#000000));
+  background-image: linear-gradient(#F8C56C, #000000);
+}
+
+.gradient.black-green {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#74b482));
+  background-image: linear-gradient(#000000, #74b482);
 }
 
 .desert-dig-background {
@@ -347,5 +353,53 @@ body {
 
 .round {
   border-radius: 20px;
+}
+
+.depthmapping {
+  background-color: #000000;
+  padding: 100px;
+  font: 400 16px 'Jetbrains Mono', monospace;
+  color: #00ff00;
+}
+
+.depthmapping > p {
+  margin-bottom: 20px;
+}
+
+.depthmapping > p > a, .depthmapping > p > a:visited {
+  color: #91f2ff;
+}
+
+.depthmapping > h1 {
+  font-weight: 200;
+}
+
+.depthmapping > .images {
+  margin-left: auto;
+  margin-right: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 5px solid;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+}
+
+.wide {
+  width: 500px;
+}
+
+.rts {
+  background-color: #74b482;
+  padding: 100px;
+  font: 400 20px 'Lato', sans-serif;
+  color: #000000;
+}
+
+.rts > h1 {
+  font-family: 'Montserrat', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
