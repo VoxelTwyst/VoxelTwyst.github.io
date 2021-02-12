@@ -323,9 +323,19 @@ body {
   background-image: linear-gradient(#F8C56C, #000000);
 }
 
-.gradient.black-green {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#74b482));
-  background-image: linear-gradient(#000000, #74b482);
+.gradient.black-yellow {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#EDCE4F));
+  background-image: linear-gradient(#000000, #EDCE4F);
+}
+
+.gradient.yellow-green {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EDCE4F), to(#74b482));
+  background-image: linear-gradient(#EDCE4F, #74b482);
+}
+
+.gradient.green-transparent {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#74b482), to(#ffffff00));
+  background-image: linear-gradient(#74b482, #ffffff00);
 }
 
 .desert-dig-background {
@@ -401,5 +411,26 @@ body {
 
 .rts > h1 {
   font-family: 'Montserrat', sans-serif;
+}
+
+.character {
+  background-color: #EDCE4F;
+  padding: 100px;
+  font: 400 20px 'Lato', sans-serif;
+  color: #000000;
+}
+
+.character > h1, .character h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.character > img {
+  width: 90%;
+}
+
+.footnote {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }
 /*# sourceMappingURL=style.css.map */
